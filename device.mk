@@ -59,6 +59,13 @@ $(foreach DEVICE_SKU, $(DEVICE_SKUS), \
     $(LOCAL_PATH)/permissions/unavail.android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(DEVICE_SKU)/unavail.android.hardware.nfc.xml \
     $(LOCAL_PATH)/permissions/unavail.com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(DEVICE_SKU)/com.nxp.mifare.xml)
 
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.rhode
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 30
 PRODUCT_SHIPPING_API_LEVEL := 31
