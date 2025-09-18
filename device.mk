@@ -27,8 +27,9 @@ TARGET_SCREEN_WIDTH := 1080
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.mmi.overlay.rc \
     init.oem.fingerprint2.sh \
-    init.mmi.overlay.rc
+    init.vendor.st21nfc.rc
 
 # LiveDisplay
 $(call soong_config_set,livedisplay_sysfs,enable_ab,true)
@@ -41,7 +42,7 @@ $(call inherit-product, vendor/motorola/MotCamera4-bengal/motcamera4.mk)
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.st
+    android.hardware.nfc-service.st
 
 # Overlay
 PRODUCT_PACKAGES += \
